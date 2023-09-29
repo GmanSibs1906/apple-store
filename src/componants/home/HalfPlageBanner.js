@@ -8,7 +8,7 @@ function HalfPlageBanner({ title, description, link, image }) {
     <div className=" w-[48vw] h-[100%] bg-[#fafafa] flex flex-col justify-center items-center ">
           <div className=" flex-col justify-center items-center mt-[20px] ">
             <h1 className=" font-semibold text-[35px] text-black flex w-full justify-center ">
-              (title)
+              {title}
             </h1>
             <h3 className=" text-black text-[20px] flex w-full justify-center ">
               {description}

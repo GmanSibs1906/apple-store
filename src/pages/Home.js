@@ -1,8 +1,9 @@
 import React from "react";
-import { home14Banner, homeIphone14, homeM2, homeIpad, whiteLogo, homeIwatch } from "../assets/images";
+import { home14Banner, homeIphone14, homeM2, homeIpad, whiteLogo, homeIwatch, homeStudio, homeWatchDeal, blackLogo } from "../assets/images";
 import FullPageBanner from "../componants/home/FullPageBanner";
 import HalfPlageBanner from "../componants/home/HalfPlageBanner";
 import WatchHalfPageBanner from "../componants/home/WatchHalfPageBanner";
+import WhiteBGWatchBanner from "../componants/home/WhiteBGWatchBanner";
 
 function Home() {
   return (
@@ -30,14 +31,16 @@ function Home() {
       < FullPageBanner title=" MacBook Air 15" description="Impressively big. Impossibly thin." image={homeM2} link="" />
 
 
-      {/* iPad and iWatch */}
+      {/* iPad and Watch */}
       <div className=" w-full flex justify-evenly items-center mt-[10px] h-[500px] ">
-        {/* iPad */}
-        < HalfPlageBanner title=" iPad" description="Lovable. Drawable. Magical" image={homeIpad} link="" />
-
-        {/* Watch */}
+        < HalfPlageBanner title="iPad" description="Lovable. Drawable. Magical" image={homeIpad} link="" />
         <WatchHalfPageBanner image={homeIwatch} logo={whiteLogo} />
-       
+      </div>
+
+      {/* Studio and iWatch */}
+      <div className=" w-full flex justify-evenly items-center mt-[10px] h-[500px] ">
+        < HalfPlageBanner title="Mac Studio" description="Supercharged by M2 Max and M2 ultra" image={homeStudio} link="" />
+        <WhiteBGWatchBanner image={homeWatchDeal} logo={blackLogo} />
       </div>
     </div>
   );

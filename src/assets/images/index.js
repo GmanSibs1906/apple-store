@@ -1,6 +1,7 @@
 // Logo
 import logo from "./apple-logo.png";
 import whiteLogo from "./white-apple.png";
+import blackLogo from "./black-apple.png";
 
 // home screen
 import home14Banner from "./i4ProBanner.jpg";
@@ -15,6 +16,7 @@ export {
     // logo
     logo,
     whiteLogo,
+    blackLogo,
 
     // home screen
     home14Banner,
