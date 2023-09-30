@@ -23,23 +23,33 @@ function Product() {
   const category = product.category;
 
   // capture product to be displayed
-  useEffect(() => {
+ useEffect(() => {
+  const fetchData = async () => {
     if (numId < 100) {
-      fetch("https://fakestoreapi.com/products/category/electronics")
-        .then((response) => response.json())
-        .then((data) => setApiProducts(data))
-        .catch((error) => console.error("Error fetching products:", error));
-      const productToDisplay = apiProducts.find((item) => item.id === numId);
-      console.log(apiProducts)
-      setProduct(productToDisplay);
-      console.log(product)
+      try {
+        const response = await fetch("https://fakestoreapi.com/products/category/electronics");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setApiProducts(data);
+        const productToDisplay = data.find((item) => item.id === numId);
+        setProduct(productToDisplay);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     } else {
       const productToDisplay = productsData.find(
         (product) => product.id === numId
       );
       setProduct(productToDisplay);
     }
-  }, [id]);
+  };
+
+  fetchData();
+}, [numId, apiProducts]);
+
+
 
 // caputure similar products
   useEffect(() => {
@@ -47,7 +57,7 @@ function Product() {
       (product) => product.category === category
     );
     setRelatedProducts(similarProduct);
-  }, [id]);
+  }, [id, category]);
 
   // distructure rating object to access rate and count
   const { rating } = product;
