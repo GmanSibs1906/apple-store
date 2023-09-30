@@ -1,10 +1,9 @@
 import React from 'react';
-import watch from "../../assets/images/watch.png"
 
-function BagProductPreview() {
+function BagProductPreview({image}) {
   return (
     <div className=' w-[80px] h-[80px] flex justify-center items-center bg-white m-[8px] rounded-[12px] '>
-    <img src={watch} alt="" className="flex" />
+    <img src={image} alt="" className="flex max-h-[60px] object-contain max-w-[60px] " />
     </div>
   )
 }

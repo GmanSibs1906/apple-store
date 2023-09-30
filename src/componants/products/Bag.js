@@ -1,16 +1,21 @@
-import React from 'react';
-import BagProductPreview from './BagProductPreview';
+import React from "react";
+import BagProductPreview from "./BagProductPreview";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Bag() {
+
+  const { cartItems } = useSelector((store) => store.cart);
+
   return (
     <div className=" fixed right-0 flex border-l border-[#454545] max-w-[250px] h-[80vh] mt-[70px] pt-[30px] px-[20px] flex-col items-center">
-        <h1 className=" text-[30px] font-semibold w-full text-center ">Bag</h1>
-        <div className="flex w-full flex-wrap justify-center">
-          <BagProductPreview />
-          <BagProductPreview />
-          <BagProductPreview />
-          <BagProductPreview />
-        </div>
+      <h1 className=" text-[30px] font-semibold w-full text-center ">Bag</h1>
+      <div className="flex w-full flex-wrap justify-center">
+      {cartItems.map((item) => {
+        return <BagProductPreview key={item.id} {...item} />;
+      })}
+      </div>
+      <Link to="/cart">
         <button className="flex mt-[30px] w-[130px] h-[35px] justify-center items-center bg-black rounded-[9px] ">
           <svg
             width="16"
@@ -24,10 +29,13 @@ function Bag() {
               fill="white"
             />
           </svg>
-          <p className=" text-[14px] flex justify-center items-center text-white ml-[10px] ">View Bag</p>
+          <p className=" text-[14px] flex justify-center items-center text-white ml-[10px] ">
+            View Bag
+          </p>
         </button>
-      </div>
-  )
+      </Link>
+    </div>
+  );
 }
 
-export default Bag
+export default Bag;
