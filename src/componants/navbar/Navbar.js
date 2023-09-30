@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className=" flex justify-center w-[100%] overflow-x-hidden h-[50px] bg-[#454545]  text-[12px] ">
+    <div className=" sticky z-50 top-0 flex justify-center w-[100%] overflow-x-hidden h-[50px] bg-[#454545]  text-[12px] ">
       <div className=" w-[80vw] flex justify-evenly items-center text-[#c9c9c9] ">
         <Link to="/">
           <img src={logo} alt="logo" className=" w-[25px] object-contain " />

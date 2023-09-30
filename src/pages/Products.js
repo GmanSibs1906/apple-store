@@ -35,7 +35,7 @@ function Products() {
       <LeftSideBar />
 
       {/* center with search and products */}
-      <div className="flex flex-col max-w-[70%]  ">
+      <div className=" m-[100px] flex flex-col max-w-[70%]  ">
         <div className="flex w-full items-center justify-center h-[100px] p-[10px] mb-[30px]">
           {/* search */}
           <div className="flex flex-col justify-start p-[8px] w-[380px]">
@@ -52,7 +52,7 @@ function Products() {
         <div className="flex w-full flex-wrap justify-evenly ">
        {
         products.map((product)=>
-        <Product  key={product.id} title={product.title} image={product.image} model={product.model} price={product.price}/>
+        <Product  key={product.id} id={product.id} title={product.title} image={product.image} model={product.model} price={product.price}/>
         )
        }
           

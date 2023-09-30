@@ -4,7 +4,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 function LeftSideBar() {
   return (
-    <div className="flex flex-col items-center justify-between w-[70px] rounded-[10px] m-[20px] h-[90vh] bg-white">
+    <div className=" fixed flex flex-col items-center justify-between w-[70px] rounded-[10px] m-[20px] h-[90vh] bg-white">
       <div className="flex flex-col items-center">
        <svg
           width="32"

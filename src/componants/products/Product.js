@@ -1,11 +1,25 @@
 import React from "react";
-import watch from "../../assets/images/watch.png";
+import { useNavigate } from "react-router-dom";
 
 function Product({ title, id, image, price, model }) {
+  const navigate = useNavigate();
+
+  // set new url path product and reload page to show clicked
+  const handleClick = () => {
+    navigate(`/product/${id}`);
+  };
+
   return (
-    <div className=" w-[223.26px] p-[16px] h-[380px] flex flex-col  items-center justify-evenly my-[10px] mx-[20px] ">
+    <div
+      onClick={handleClick}
+      className=" w-[223.26px] p-[16px] h-[380px] flex flex-col  items-center justify-evenly my-[10px] mx-[20px] "
+    >
       <div className="flex justify-center items-center w-[191.36px] h-[232px] rounded-[22px] bg-white">
-        <img src={image} alt="" className="flex max-h-[200px] max-w-[160px] object-contain" />
+        <img
+          src={image}
+          alt=""
+          className="flex max-h-[200px] max-w-[160px] object-contain"
+        />
       </div>
       <div className="flex flex-col p-[8px] w-[191.36px]">
         <h3 className=" font-semibold ">{title.slice(0, 15)}</h3>
