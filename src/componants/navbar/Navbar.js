@@ -15,8 +15,8 @@ function Navbar() {
         <span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-yellow-200 hover:to-orange-600 transition-all duration-300 ">iPad</span>
         <span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-pink-200 hover:to-purple-600 transition-all duration-300 ">iPhone</span>
         <span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-blue-300 hover:to-blue-700 transition-all duration-300 ">Watch</span>
-        <Link to="/products"><span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-yellow-200 hover:to-orange-600 transition-all duration-300 ">Products</span></Link>
-        <span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-pink-200 hover:to-purple-600 transition-all duration-300 ">Where to Buy</span>
+        <Link to="/products"><span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-yellow-200 hover:to-orange-600 transition-all duration-300 ">Other</span></Link>
+        <span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-pink-200 hover:to-purple-600 transition-all duration-300 ">Log in</span>
         <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[14px]" />
       </div>
     </div>
