@@ -1,19 +1,19 @@
 import React from "react";
 import watch from "../../assets/images/watch.png";
 
-function Product() {
+function Product({ title, id, image, price, model }) {
   return (
-    <div className=" w-[223.26px] p-[16px] h-[380px] flex flex-col  items-center justify-evenly ">
+    <div className=" w-[223.26px] p-[16px] h-[380px] flex flex-col  items-center justify-evenly my-[10px] mx-[20px] ">
       <div className="flex justify-center items-center w-[191.36px] h-[232px] rounded-[22px] bg-white">
-        <img src={watch} alt="" className="flex" />
+        <img src={image} alt="" className="flex max-h-[200px] max-w-[160px] object-contain" />
       </div>
       <div className="flex flex-col p-[8px] w-[191.36px]">
-        <h3 className=" font-semibold ">Apple Watch</h3>
+        <h3 className=" font-semibold ">{title.slice(0, 15)}</h3>
         <p className=" text-[#454545] text-[13px] font-light mb-[8px] ">
-          Series 5 SE
+          {model}
         </p>
         <div className="flex w-[191.36px] justify-between items-center ">
-          <h3 className=" font-semibold text-[16px] ">R1999.99</h3>
+          <h3 className=" font-semibold text-[16px] ">R{price}</h3>
           <svg
             width="30"
             height="30"

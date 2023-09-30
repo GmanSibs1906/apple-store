@@ -2,16 +2,32 @@ import React, { useState, useEffect } from 'react';
 import Product from "../componants/products/Product";
 import Bag from "../componants/products/Bag";
 import LeftSideBar from "../componants/products/LeftSideBar";
+import { useParams } from "react-router-dom";
+import { productsData } from "../assets/data/productData";
 
 function Products() {
+
+  // get category from url params
+  const { category } = useParams();
+
+  // asaign product object from params data in useEffect
   const [products, setProducts] = useState([]);
 
+  // map through products data looking at category to display matching category products
   useEffect(() => {
+  const matchingProducts = productsData.filter((item) => item.category === category);
+  setProducts(matchingProducts);
+}, [category]);
+
+  // if other page clicked call fake store api and display data from electronics category
+  useEffect(() => {
+   if (category === "electronics") {
     fetch('https://fakestoreapi.com/products/category/electronics')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('Error fetching products:', error));
-  }, []);
+}
+  }, [category]);
 
   return (
     <div className=" w-full h-full bg-[#f1f1f1] flex relative ">
@@ -33,17 +49,13 @@ function Products() {
         </div>
 
         {/* products */}
-        <div className="flex w-full flex-wrap justify-evenly ">oo
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+        <div className="flex w-full flex-wrap justify-evenly ">
+       {
+        products.map((product)=>
+        <Product  key={product.id} title={product.title} image={product.image} model={product.model} price={product.price}/>
+        )
+       }
+          
         </div>
       </div>
 
