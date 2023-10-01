@@ -41,6 +41,11 @@ import iwatch2 from "./watch1.png";
 import iwatch3 from "./watch2.png";
 import iwatch4 from "./watch3.png";
 
+// shipping
+import aramex from "./aramex.png"
+import courier from "./courier.png"
+import pep from "./pep.jpeg"
+
 export {
     // logo
     logo,
@@ -84,4 +89,9 @@ export {
     iwatch2,
     iwatch3,
     iwatch4,
+
+    // shipping
+    aramex,
+    pep,
+    courier,
 }
