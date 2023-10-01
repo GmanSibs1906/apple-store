@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-function WatchHalfPageBanner({ image, logo }) {
+function WatchHalfPageBanner({ image, logo, link }) {
   return (
     <div className=" w-[48vw] h-[100%] bg-black flex flex-col justify-between ">
     <div className=" flex-col justify-center items-center mt-[40px] ">
@@ -15,7 +15,7 @@ function WatchHalfPageBanner({ image, logo }) {
       <h3 className=" text-white text-[16px] flex w-full justify-center ">
         Lovable. Drawable. Magical
       </h3>
-      <Link to="" className="hover:underline text-[#4478c5] mt-[15px]">
+      <Link to={link} className="hover:underline text-[#4478c5] mt-[15px]">
         <h5 className=" flex w-full justify-center items-center text-[15px] mt-[5px] ">
           Learn more
           <FontAwesomeIcon

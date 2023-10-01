@@ -29,17 +29,19 @@ function Products() {
 }
   }, [category]);
 
+
   return (
     <div className=" w-full h-full bg-[#f1f1f1] flex relative ">
       {/* left icon bar with icons */}
       <LeftSideBar />
 
       {/* center with search and products */}
-      <div className=" m-[100px] flex flex-col max-w-[70%]  ">
+      <div className=" mx-[100px] flex flex-col max-w-[70%]  ">
         <div className="flex w-full items-center justify-center h-[100px] p-[10px] mb-[30px]">
           {/* search */}
           <div className="flex flex-col justify-start p-[8px] w-[380px]">
-            <p className=" pl-[3px] text-[#454545] text-[12px] ">Search Item</p>
+          <h1 className="flex w-full justify-center text-[30px] font-extralight mt-[50px] ">{category}</h1>
+            <p className=" pl-[3px] text-[#454545] text-[12px] mt-[20px] ">Search Item</p>
             <input
               type="text"
               className="flex h-[35px] rounded-md text-[13px] py-[5px] px-[10px]"

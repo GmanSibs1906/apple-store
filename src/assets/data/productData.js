@@ -33,13 +33,14 @@ import {
 export const productsData = [
   {
     id: 101,
-    title: "iPhone 11",
-    model: "11",
+    title: "iPhone 14",
+    model: "14",
     rating: {rate: 4.7, count: 146},
-    price: 699.99,
+    price: 2699.99,
     image: iphone1,
-    description: "The iPhone 11 features a dual-camera system, A13 Bionic chip, and all-day battery life.",
+    description: "The iPhone 14 features a dual-camera system, A13 Bionic chip, and all-day battery life.",
     category: "iPhone",
+    quantity: 1,
   },
   {
     id: 102,
@@ -50,6 +51,7 @@ export const productsData = [
     image: iphone5,
     description: "The iPhone 12 Pro boasts a Super Retina XDR display, Ceramic Shield front cover, and LiDAR Scanner.",
     category: "iPhone",
+    quantity: 1,
   },
   {
     id: 103,
@@ -60,6 +62,7 @@ export const productsData = [
     image: iphone3,
     description: "The iPhone SE combines the A13 Bionic chip with a compact design and great value.",
     category: "iPhone",
+    quantity: 1,
   },
   {
     id: 104,
@@ -70,6 +73,7 @@ export const productsData = [
     image: iphone4,
     description: "The iPhone XR features a Liquid Retina HD display and Face ID for secure authentication.",
     category: "iPhone",
+    quantity: 1,
   },
   {
     id: 105,
@@ -80,6 +84,7 @@ export const productsData = [
     image: iphone2,
     description: "The iPhone 13 Pro Max offers Pro camera and video capabilities along with 5G connectivity.",
     category: "iPhone",
+    quantity: 1,
   },
   {
     id: 106,
@@ -90,6 +95,7 @@ export const productsData = [
     image: ipad1,
     description: "The iPad Pro 11-inch is powered by the M1 chip and features a Liquid Retina XDR display.",
     category: "iPad",
+    quantity: 1,
   },
   {
     id: 107,
@@ -100,6 +106,7 @@ export const productsData = [
     image: ipad2,
     description: "The iPad Air features an A14 Bionic chip, 10.9-inch Liquid Retina display, and support for Apple Pencil.",
     category: "iPad",
+    quantity: 1,
   },
   {
     id: 108,
@@ -110,6 +117,7 @@ export const productsData = [
     image: imac1,
     description: "The 27-inch iMac is powered by the M1 chip and features a 5K Retina display.",
     category: "Mac",
+    quantity: 1,
   },
   {
     id: 109,
@@ -120,6 +128,7 @@ export const productsData = [
     image: imac2,
     description: "The 24-inch iMac is powered by the M1 chip and features a 5K Retina display.",
     category: "Mac",
+    quantity: 1,
   },
   {
     id: 110,
@@ -130,6 +139,7 @@ export const productsData = [
     image: mac1,
     description: "The MacBook Pro 13-inch with M1 chip delivers powerful performance in a compact form factor.",
     category: "Mac",
+    quantity: 1,
   },
   {
     id: 111,
@@ -140,16 +150,18 @@ export const productsData = [
     image: mac2,
     description: "The MacBook Air with M1 chip delivers powerful performance in a compact form factor.",
     category: "Mac",
+    quantity: 1,
   },
   {
     id: 112,
-    title: "MacBook Pro 15-inch",
+    title: "MacBook Air 15-inch",
     model: "15-inch",
     rating: {rate: 4.8, count: 153},
     price: 1299.99,
     image: mac3,
-    description: "The MacBook Pro 15-inch with M1 chip delivers powerful performance in a compact form factor.",
-    category: "Mac"
+    description: "The MacBook Air 15-inch with M1 chip delivers powerful performance in a compact form factor.",
+    category: "Mac",
+    quantity: 1,
   },
   {
     id: 113,
@@ -160,6 +172,7 @@ export const productsData = [
     image: studio1,
     description: "The Studio iMac features a 24-inch 4.5K Retina display and is designed for creative professionals.",
     category: "Mac",
+    quantity: 1,
   },
   {
     id: 114,
@@ -170,6 +183,7 @@ export const productsData = [
     image: studio2,
     description: "The Studio iMac features a 21-inch 4.5K Retina display and is designed for creative professionals.",
     category: "Mac",
+    quantity: 1,
   },
   {
     id: 115,
@@ -180,6 +194,7 @@ export const productsData = [
     image: ipad3,
     description: "The iPad Mini features a 8.3-inch Liquid Retina display and supports Apple Pencil.",
     category: "iPad",
+    quantity: 1,
   },
   {
     id: 117,
@@ -190,6 +205,7 @@ export const productsData = [
     image: ipad4,
     description: "The iPad Pro 12.9-inch is powered by the M1 chip and features a 12.9-inch Liquid Retina XDR display.",
     category: "iPad",
+    quantity: 1,
   },
   {
     id: 18,
@@ -200,6 +216,7 @@ export const productsData = [
     image: ipad5,
     description: "The 9th Generation iPad offers a powerful A13 Bionic chip and supports Apple Pencil.",
     category: "iPad",
+    quantity: 1,
   },
   {
     id: 119,
@@ -209,7 +226,8 @@ export const productsData = [
     price: 399.99,
     image: iwatch1,
     description: "The Apple Watch Series 6 offers advanced health and fitness features along with a Blood Oxygen sensor.",
-    category: "Watch"
+    category: "Watch",
+    quantity: 1,
   },
   {
     id: 120,
@@ -219,7 +237,8 @@ export const productsData = [
     price: 279.99,
     image: iwatch2,
     description: "The Apple Watch SE combines the essentials of the Apple Watch with affordability.",
-    category: "Watch"
+    category: "Watch",
+    quantity: 1,
   },
   {
     id: 121,
@@ -229,7 +248,8 @@ export const productsData = [
     price: 199.99,
     image: iwatch3,
     description: "The Apple Watch Series 3 offers basic fitness tracking and smartwatch features at an affordable price.",
-    category: "Watch"
+    category: "Watch",
+    quantity: 1,
   },
   {
     id: 122,
@@ -239,6 +259,7 @@ export const productsData = [
     price: 1249.99,
     image: iwatch4,
     description: "The Apple Watch Hermes offers a luxury experience with exclusive watch faces and bands.",
-    category: "Watch"
+    category: "Watch",
+    quantity: 1,
   }
 ];

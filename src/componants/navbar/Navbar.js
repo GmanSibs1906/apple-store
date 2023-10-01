@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { logo } from "../../assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { calculateTotals } from "../../redux/features/cart/cartSlice";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const { quantity } = useSelector((store) => store.cart);
+  dispatch(calculateTotals());
+  useEffect(() => {}, [quantity]);
+
   return (
     <div className=" sticky z-50 top-0 flex justify-center w-[100%] overflow-x-hidden h-[50px] bg-[#454545]  text-[12px] ">
       <div className=" w-[80vw] flex justify-evenly items-center text-[#c9c9c9] ">
@@ -39,7 +46,17 @@ function Navbar() {
         <span className=" cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-[#c9c9c9] to-[#c9c9c9] hover:from-pink-200 hover:to-purple-600 transition-all duration-300 ">
           Log in
         </span>
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[14px]" />
+        <Link to="/cart">
+          <div className="flex relative ">
+            <span className=" absolute text-[#454545] flex justify-center items-center text-[10px] bottom-3 left-[1px] bg-[#c9c9c9] h-[14px] w-[14px] rounded-[50%]">
+              {quantity}
+            </span>
+            <FontAwesomeIcon
+              icon={faBasketShopping}
+              className="text-[14px] mt-[8px]"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
