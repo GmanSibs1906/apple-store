@@ -1,11 +1,11 @@
 import React from "react";
 
-function OrderProduct({ title, productQuantity, price }) {
+function OrderProduct({ title, productQuantity, price, image }) {
   return (
     <div className=" flex flex-col w-[40%] ">
       <div className=" flex justify-between items-center ">
         <img
-          src={iphone1}
+          src={image}
           alt="Product purchased"
           className=" h-[50px] object-contain "
         />

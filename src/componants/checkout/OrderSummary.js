@@ -20,7 +20,7 @@ function OrderSummary({
 }) {
   const dispatch = useDispatch();
 
-  const { total, cartItems, quantity } = useSelector((store) =>store.cart);
+  const { total, cartItems, quantity } = useSelector((store) => store.cart);
 
   const orderStatus = "Pending...";
 
@@ -89,18 +89,20 @@ function OrderSummary({
         </div>
         <div className="flex w-full justify-center">
           {enablePayBtn ? (
-            <button
-              onClick={handleOrderConfirmation}
-              className="flex mt-[23px] mb-[2px] w-[200px] h-[30px] justify-center items-center bg-black rounded-[9px] "
-            >
-              <FontAwesomeIcon
-                icon={faCreditCard}
-                className="text-[14px] text-white mt-[2px]"
-              />
-              <p className="text-[14px] flex justify-center items-center text-white ml-[10px]  ">
-                Pay
-              </p>
-            </button>
+            <Link to="/orders">
+              <button
+                onClick={handleOrderConfirmation}
+                className="flex mt-[23px] mb-[2px] w-[200px] h-[30px] justify-center items-center bg-black rounded-[9px] "
+              >
+                <FontAwesomeIcon
+                  icon={faCreditCard}
+                  className="text-[14px] text-white mt-[2px]"
+                />
+                <p className="text-[14px] flex justify-center items-center text-white ml-[10px]  ">
+                  Pay
+                </p>
+              </button>
+            </Link>
           ) : (
             <div>
               <button

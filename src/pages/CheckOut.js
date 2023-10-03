@@ -27,9 +27,6 @@ function CheckOut() {
     }
   }, [voucher]);
 
-  const { orders } = useSelector((store) => store.order);
-  console.log(orders);
-
   const handleClick = () => {
     if (
       fullName !== "" &&
