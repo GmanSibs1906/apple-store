@@ -13,7 +13,7 @@ function CheckOut() {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
-  const [courierComp, setCourierComp] = useState("");
+  const [courierComp, setCourierComp] = useState("Courier Guy");
   const [voucher, setVoucher] = useState("");
   const [discount, setDiscount] = useState(false);
   const [enablePayBtn, setEnablePayBtn] = useState(false);
@@ -48,7 +48,7 @@ function CheckOut() {
       const randomNumber = Math.floor(Math.random() * 101);
 
       setOrderId((contactNumber + myDate + randomNumber).replace(/\//g, ""));
-// enable disabled pay button
+      // enable disabled pay button
       setEnablePayBtn(true);
     } else {
       window.prompt("Please fill in all required fields");

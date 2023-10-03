@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -24,6 +24,8 @@ function OrderSummary({
 
   const orderStatus = "Pending...";
 
+  const [orderTotal, setOrderTotal] = useState(0);
+
   let shipping = 0;
   if (courier === "Aramex") {
     shipping = 100;
@@ -34,6 +36,10 @@ function OrderSummary({
   }
 
   let voucher = discount ? total / 10 : 0;
+
+  useEffect(() => {
+    setOrderTotal(total + shipping - voucher);
+  }, [total, shipping, voucher]);
 
   // handle confirmation
   const handleOrderConfirmation = () => {
@@ -48,6 +54,7 @@ function OrderSummary({
       courierComp,
       discount,
       cartItems,
+      orderTotal,
       total,
       quantity,
       orderDate: new Date().toISOString(),
@@ -84,7 +91,7 @@ function OrderSummary({
         <div className="flex items-center border-1 border-t border-b border-t-[#acacac] border-b-[#acacac] h-[50px] ">
           <div className="flex w-full justify-between text-red-600 text-[18px] font-bold ">
             <span>Order total:</span>
-            <span>R{(total + shipping - voucher).toFixed(2)}</span>
+            <span>R{orderTotal.toFixed(2)}</span>
           </div>
         </div>
         <div className="flex w-full justify-center">
