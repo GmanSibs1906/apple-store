@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { newOrder } from "../../redux/features/orders/orderSlice";
+import { handlePayfastSession } from "../../handlePayment/handlePayfastSession";
 
 function OrderSummary({
   discount,
@@ -38,7 +39,8 @@ function OrderSummary({
   let voucher = discount ? total / 10 : 0;
 
   useEffect(() => {
-    setOrderTotal(total + shipping - voucher);
+    const newOrderTotal = (total + shipping - voucher).toFixed(2);
+    setOrderTotal(parseFloat(newOrderTotal));
   }, [total, shipping, voucher]);
 
   // handle confirmation
@@ -63,6 +65,11 @@ function OrderSummary({
 
     // dispatch the new order
     dispatch(newOrder(order));
+  };
+
+  const destructureUrl = () => {
+    const url = handlePayfastSession(orderTotal, orderId);
+    return url.actionURL;
   };
 
   return (
@@ -96,7 +103,7 @@ function OrderSummary({
         </div>
         <div className="flex w-full justify-center">
           {enablePayBtn ? (
-            <Link to="/orders">
+            <Link to={destructureUrl()}>
               <button
                 onClick={handleOrderConfirmation}
                 className="flex mt-[23px] mb-[2px] w-[200px] h-[30px] justify-center items-center bg-black rounded-[9px] "
