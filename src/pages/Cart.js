@@ -17,7 +17,7 @@ function Cart() {
   // empty cart
   if (quantity < 1) {
     return (
-      <section className="w-full min-h-[94vh] bg-[#f1f1f1] flex relative">
+      <section className="w-full min-h-[92vh] bg-[#f1f1f1] flex relative">
         {/* left icon bar with icons */}
         <LeftSideBar />
         <div className=" ml-[110px] flex w-[80%] flex-col justify-center items-center">

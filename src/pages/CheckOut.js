@@ -59,7 +59,7 @@ function CheckOut() {
   };
 
   return (
-    <div className=" w-full min-h-[94vh] bg-[#f1f1f1] flex relative ">
+    <div className=" w-full min-h-[92vh] bg-[#f1f1f1] flex relative ">
       {/* center with search and products */}
       <div className=" mx-[50px] mt-[50px] flex flex-col w-[65%] pt-[23px] pl-[10%]   ">
         {/*Shipping details */}

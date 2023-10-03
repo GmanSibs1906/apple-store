@@ -67,7 +67,7 @@ function Product() {
   const { rating } = product;
 
   return (
-    <div className=" w-full min-h-[94vh] bg-[#f1f1f1] flex relative ">
+    <div className=" w-full min-h-[92vh] bg-[#f1f1f1] flex relative ">
       {/* left icon bar with icons */}
       <LeftSideBar />
       <div className="flex flex-col max-w-[70%] ml-[110px] pt-[30px] px-[20px] ">
