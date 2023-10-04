@@ -7,8 +7,8 @@ function FullPageBanner({ title, description, link, image }) {
   return (
     <div className=" w-full flex flex-col justify-center items-center py-[50px] bg-[#fafafa] mt-[10px] ">
       <div className=" flex-col justify-center items-center ">
-        <h1 className=" font-semibold text-[60px] text-black  ">{title}</h1>
-        <h3 className=" text-black text-[25px] flex w-full justify-center ">
+        <h1 className=" font-semibold text-[45px] md:text-[60px] text-black  ">{title}</h1>
+        <h3 className=" text-black text-[18px] md:text-[25px] flex w-full justify-center ">
           {description}
         </h3>
         <Link to={link} className="hover:underline text-[#356bbb] mt-[15px]">
@@ -24,7 +24,7 @@ function FullPageBanner({ title, description, link, image }) {
       <img
         src={image}
         alt=" iphone 14 "
-        className=" max-w-[800px] mt-[30px] "
+        className=" max-w-[90vw] md:max-w-[800px] mt-[30px] "
       />
     </div>
   );

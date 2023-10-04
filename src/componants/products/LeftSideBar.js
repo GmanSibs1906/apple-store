@@ -6,7 +6,7 @@ function LeftSideBar() {
   return (
     <div className=" fixed flex flex-col items-center justify-between w-[70px] rounded-[10px] m-[20px] h-[90vh] bg-white">
       <div className="flex flex-col items-center">
-       <svg
+       {/* <svg
           width="32"
           height="37"
           viewBox="0 0 32 37"
@@ -49,8 +49,8 @@ function LeftSideBar() {
             stroke-miterlimit="10"
             stroke-linecap="round"
           />
-        </svg>
-
+        </svg> */}
+        
         <svg
           width="40"
           height="41"
@@ -64,6 +64,7 @@ function LeftSideBar() {
             fill="#1A1F16"
           />
         </svg>
+        Orders
       </div>
        
       <div className="flex justify-center items-center border-black w-[35px] h-[35px] rounded-[50%] border mb-[30px]">

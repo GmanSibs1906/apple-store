@@ -12,6 +12,9 @@ import homeM2 from "./macbookM2.png";
 import homeStudio from "./studio.png";
 import homeWatchDeal from "./watch_deal.webp";
 
+// home screen *mobile device*
+import mobileHome from "./mobileHome.jpg";
+
 // mac
 import imac1 from "./imac1.png";
 import imac2 from "./imac2.png";
@@ -60,6 +63,9 @@ export {
     homeM2,
     homeStudio,
     homeWatchDeal,
+
+    // home screen *mobile device*
+    mobileHome,
 
     //mac
     imac1,

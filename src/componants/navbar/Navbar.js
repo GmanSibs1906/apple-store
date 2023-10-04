@@ -13,8 +13,8 @@ function Navbar() {
   useEffect(() => {}, [quantity]);
 
   return (
-    <div className=" sticky z-50 top-0 flex justify-center w-[100%] overflow-x-hidden h-[50px] bg-[#454545]  text-[12px] ">
-      <div className=" w-[80vw] flex justify-evenly items-center text-[#c9c9c9] ">
+    <div className=" sticky z-30 top-0 flex md:justify-center w-[100%] overflow-x-hidden h-[50px] bg-[#454545]  text-[12px] ">
+      <div className=" z-10 hidden md:flex w-[80vw] justify-evenly items-center text-[#c9c9c9] ">
         <Link to="/">
           <img src={logo} alt="logo" className=" w-[25px] object-contain " />
         </Link>
@@ -48,6 +48,22 @@ function Navbar() {
         </span>
         <Link to="/cart">
           <div className="flex relative ">
+            <span className=" absolute text-[#454545] flex justify-center items-center text-[10px] bottom-3 left-[1px] bg-[#c9c9c9] h-[14px] w-[14px] rounded-[50%]">
+              {quantity}
+            </span>
+            <FontAwesomeIcon
+              icon={faBasketShopping}
+              className="text-[14px] mt-[8px]"
+            />
+          </div>
+        </Link>
+      </div>
+
+      {/* mobile view */}
+      <div className=" w-full flex justify-between ">
+      <img src={logo} alt="logo" className=" w-[30px] object-contain ml-[20px] " />
+      <Link to="/cart">
+          <div className="flex relative mr-[25px] mt-[17px] ">
             <span className=" absolute text-[#454545] flex justify-center items-center text-[10px] bottom-3 left-[1px] bg-[#c9c9c9] h-[14px] w-[14px] rounded-[50%]">
               {quantity}
             </span>

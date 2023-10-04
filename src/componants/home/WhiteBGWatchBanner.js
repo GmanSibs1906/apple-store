@@ -5,7 +5,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 function WhiteBGWatchBanner({ image, logo, link }) {
   return (
-    <div className=" w-[48vw] h-[100%] bg-[#fafafa] flex flex-col justify-between ">
+    <div className=" md:w-[48vw] h-[100%] bg-[#fafafa] flex flex-col justify-between ">
     <div className=" flex-col justify-center items-center mt-[20px] ">
       <h1 className=" font-semibold text-[25px] text-black flex w-full justify-center ">
       <img src={logo} alt="white logo" className=" h-[25px] object-contain mt-[6px] mr-[2px] " />

@@ -5,7 +5,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 function HalfPlageBanner({ title, description, link, image }) {
   return (
-    <div className=" w-[48vw] h-[100%] bg-[#fafafa] flex flex-col justify-center items-center ">
+    <div className=" md:w-[48vw] h-[100%] bg-[#fafafa] flex flex-col justify-center items-center ">
           <div className=" flex-col justify-center items-center mt-[20px] ">
             <h1 className=" font-semibold text-[35px] text-black flex w-full justify-center ">
               {title}

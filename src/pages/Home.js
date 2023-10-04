@@ -1,5 +1,5 @@
 import React from "react";
-import { home14Banner, homeIphone14, homeM2, homeIpad, whiteLogo, homeIwatch, homeStudio, homeWatchDeal, blackLogo } from "../assets/images";
+import { home14Banner, mobileHome, homeIphone14, homeM2, homeIpad, whiteLogo, homeIwatch, homeStudio, homeWatchDeal, blackLogo } from "../assets/images";
 import FullPageBanner from "../componants/home/FullPageBanner";
 import HalfPlageBanner from "../componants/home/HalfPlageBanner";
 import WatchHalfPageBanner from "../componants/home/WatchHalfPageBanner";
@@ -11,7 +11,7 @@ function Home() {
       {/* iPhone 14 Pro Banner */}
       <div className=" w-[100%] bg-black flex flex-col items-center justify-center">
         <div className=" flex-col justify-center items-center ">
-          <h1 className=" font-semibold text-[60px] text-white mt-[50px] ">
+          <h1 className=" font-semibold text-[45px] md:text-[60px] text-white mt-[50px] ">
             iPhone 14 Pro
           </h1>
           <h3 className=" text-white text-[25px] flex w-full justify-center ">
@@ -21,7 +21,12 @@ function Home() {
         <img
           src={home14Banner}
           alt=" iphone 14 banner "
-          className=" max-w-[800px] object-contain "
+          className="hidden md:flex max-w-[800px] object-contain "
+        />
+        <img
+          src={mobileHome}
+          alt=" iphone 14 banner "
+          className=" max-w-[100vw] object-contain md:hidden "
         />
       </div>
       {/* iphone 14 advert */}
@@ -32,13 +37,13 @@ function Home() {
 
 
       {/* iPad and Watch */}
-      <div className=" w-full flex justify-evenly items-center mt-[10px] h-[500px] ">
+      <div className=" w-full flex justify-center flex-col md:flex-row md:justify-evenly md:items-center mt-[10px]  md:h-[500px] ">
         < HalfPlageBanner title="iPad" description="Lovable. Drawable. Magical" image={homeIpad} link="products/iPad" />
         <WatchHalfPageBanner image={homeIwatch} logo={whiteLogo} link="product/122" />
       </div>
 
       {/* Studio and iWatch */}
-      <div className=" w-full flex justify-evenly items-center mt-[10px] h-[500px] ">
+      <div className=" w-full flex justify-center flex-col md:flex-row md:justify-evenly md:items-center mt-[10px]  md:h-[500px] ">
         < HalfPlageBanner title="Mac Studio" description="Supercharged by M2 Max and M2 ultra" image={homeStudio} link="product/113" />
         <WhiteBGWatchBanner image={homeWatchDeal} logo={blackLogo} link="products/Watch" />
       </div>
