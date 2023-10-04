@@ -156,21 +156,38 @@ function Product() {
           </div>
         </div>
         <div className="flex w-[100%] justify-center ">
-          <hr className="border border-[#454545] w-[800vw] mt-[60px] mb-[30px]" />
+          <hr className="border border-[#454545] w-[800vw] mt-[60px] mb-[20px]" />
         </div>
         <div className="flex w-[100%] flex-col">
-          <h3 className="text-[18px] underline">About Project</h3>
-          <p className="my-[20px] text-[14px]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+          <p className="text-orange-600 font-bold underline mb-[10px]">
+            Project Goal: MERN E-commerce Showcase 🚀
           </p>
+          <div className="flex my-[2px]">
+            <span className="font-semibold mr-[4px]">
+              ✨ React Js Front-end:{" "}
+            </span>
+            <span className="">
+              Features a Sleek UI with Tailwind CSS and Redux state management.
+            </span>
+          </div>
+          <div className="flex my-[2px]">
+            <span className="font-semibold mr-[4px]">
+              💳 PayFast Integration:
+            </span>
+            <span className=""></span>Secure payments for seamless transactions.
+          </div>
+          <div className="flex my-[2px]">
+            <span className="font-semibold mr-[4px]">🛒 API:</span>
+            <span className="">
+              Electronics Products in the "Other" section are from the Fake
+              Store API and the rest are in local storage.
+            </span>
+          </div>
+          <div className="flex my-[2px]">
+            <span className="font-bold mr-[4px]">⚙️ Upcoming:</span>
+            <span className=""></span>Node.js backend, authentication, and CRUD
+            dashboard.
+          </div>
         </div>
       </div>
       {/* right side with cart products */}

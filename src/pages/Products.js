@@ -7,45 +7,50 @@ import { productsData } from "../assets/data/productData";
 
 function Products() {
   const [apiInfo, setApiInfo] = useState("");
-
-  // get category from url params
   const { category } = useParams();
-
-  // asaign product object from params data in useEffect
   const [products, setProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  // map through products data looking at category to display matching category products
+  // check for products with category matching url param
   useEffect(() => {
     const matchingProducts = productsData.filter(
       (item) => item.category === category
     );
+    // set as products to display
     setProducts(matchingProducts);
   }, [category]);
 
-  // if other page clicked call fake store api and display data from electronics category
+  // if category === electronics fetch from fake store api
   useEffect(() => {
     if (category === "electronics") {
       fetch("https://fakestoreapi.com/products/category/electronics")
         .then((response) => response.json())
+        // set as products to display
         .then((data) => setProducts(data))
         .catch((error) => console.error("Error fetching products:", error));
-    }
-    if (category === "electronics") {
       setApiInfo("this data from Fake Store API");
     } else {
       setApiInfo("");
     }
   }, [category]);
 
+  // handle the search and filter products
+  useEffect(() => {
+    // filter based on user input stored in the searchQuery
+    const searchResults = products.filter((product) =>
+      product.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    // set as products to display
+    setFilteredProducts(searchResults);
+  }, [searchQuery, products]);
+
   return (
     <div className=" w-full h-full bg-[#f1f1f1] flex relative ">
-      {/* left icon bar with icons */}
       <LeftSideBar />
 
-      {/* center with search and products */}
       <div className=" mx-[100px] flex flex-col max-w-[70%]  ">
         <div className="flex w-full items-center justify-center h-[100px] p-[10px] mb-[30px]">
-          {/* search */}
           <div className="flex flex-col justify-start p-[8px] w-[380px]">
             <h1 className="flex w-full justify-center text-[30px] font-extralight mt-[50px] ">
               {category}
@@ -60,13 +65,14 @@ function Products() {
               type="text"
               className="flex h-[35px] rounded-md text-[13px] py-[5px] px-[10px]"
               placeholder=" iPhone 15... "
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </div>
 
-        {/* products */}
         <div className="flex w-full flex-wrap justify-evenly ">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <Product
               key={product.id}
               id={product.id}
@@ -79,7 +85,6 @@ function Products() {
         </div>
       </div>
 
-      {/* right side with cart products */}
       <Bag />
     </div>
   );
