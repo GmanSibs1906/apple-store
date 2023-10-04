@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -16,16 +16,16 @@ import MobileMenu from './componants/navbar/MobileMenu';
 
 function App() {
 
+    const [isOpen, setIsOpen] = useState(false);
 
-    const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-  
-    const toggleOverlay = () => {
-      setIsOverlayVisible(!isOverlayVisible);
-    };
+    // Function to toggle isOpen state
+  const toggleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <Router>
-      <Navbar />
+      <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:category" element={<Products />} />
@@ -36,13 +36,7 @@ function App() {
       </Routes>
 
        {/* Add the Overlay component with conditional rendering */}
-       {isOverlayVisible && <MobileMenu onClose={toggleOverlay} />}
-
-{/* Button to toggle the overlay */}
-<button onClick={toggleOverlay} className="fixed bottom-4 right-4 p-2 bg-blue-500 text-white rounded-full hover:bg-blue-700 cursor-pointer">
-  Show Overlay
-</button>
-
+       {isOpen && <MobileMenu onClose={toggleIsOpen} />}
 
     </Router>
   );

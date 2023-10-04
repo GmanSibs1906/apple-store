@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { calculateTotals } from "../../redux/features/cart/cartSlice";
 
-function Navbar() {
+function Navbar({ isOpen, toggleIsOpen }) {
   const dispatch = useDispatch();
   const { quantity } = useSelector((store) => store.cart);
   dispatch(calculateTotals());
   useEffect(() => {}, [quantity]);
+
+  const handleClick = () => {
+    toggleIsOpen();
+  };
 
   return (
     <div className=" sticky z-30 top-0 flex md:justify-center w-[100%] overflow-x-hidden h-[50px] bg-[#454545]  text-[12px] ">
@@ -60,8 +64,8 @@ function Navbar() {
       </div>
 
       {/* mobile view */}
-      <div className=" w-full flex justify-between ">
-      <img src={logo} alt="logo" className=" w-[30px] object-contain ml-[20px] " />
+      <div className=" w-full flex justify-between md:hidden ">
+      <img src={logo} alt="logo" className=" w-[30px] object-contain ml-[20px] " onClick={handleClick}/>
       <Link to="/cart">
           <div className="flex relative mr-[25px] mt-[17px] ">
             <span className=" absolute text-[#454545] flex justify-center items-center text-[10px] bottom-3 left-[1px] bg-[#c9c9c9] h-[14px] w-[14px] rounded-[50%]">

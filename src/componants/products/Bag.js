@@ -8,7 +8,7 @@ function Bag() {
   const { cartItems } = useSelector((store) => store.cart);
 
   return (
-    <div className=" fixed right-0 flex border-l border-[#454545] max-w-[250px] h-[80vh] mt-[70px] pt-[30px] px-[20px] flex-col items-center">
+    <div className=" hidden fixed right-0 md:flex border-l border-[#454545] max-w-[250px] h-[80vh] mt-[70px] pt-[30px] px-[20px] flex-col items-center">
       <h1 className=" text-[30px] font-semibold w-full text-center ">Bag</h1>
       <div className="flex w-full flex-wrap justify-center">
       {cartItems.map((item) => {
