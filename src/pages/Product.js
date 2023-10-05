@@ -72,7 +72,7 @@ function Product() {
       <div className="hidden w-full min-h-[92vh]  md:flex relative ">
         {/* left icon bar with icons */}
         <LeftSideBar />
-        <div className="flex flex-col max-w-[70%] ml-[110px] pt-[30px] px-[20px] ">
+        <div className="flex flex-col max-w-[70%] md:ml-[85px] lg:ml-[110px] pt-[30px] px-[20px] ">
           <Link to={`/products/${product.category}`}>
             <div className="flex justify-start items-center">
               <FontAwesomeIcon
@@ -85,7 +85,7 @@ function Product() {
           {/* middle */}
           <div className="flex w-[68vw] mt-[20px] ">
             {/* relaled */}
-            <div className="flex flex-col w-[100px] items-center ">
+            <div className=" hidden lg:flex flex-col w-[100px] items-center ">
               Related
               <div className="flex flex-col w-[100px] items-center">
                 {relatedProducts.slice(0, 3).map((item) => (
@@ -98,15 +98,27 @@ function Product() {
               </div>
             </div>
             {/* main product details */}
-            <div className="flex w-[60vw]  ">
-              <div className="flex items-center justify-center bg-white w-[280px] h-[355px] rounded-[15px]">
+            <div className=" flex w-[60vw]  ">
+              <div className="flex flex-col items-center justify-center bg-white w-[280px] h-[355px] rounded-[15px]">
                 <img
                   src={product.image}
                   alt=""
                   className="w-[220px] object-contain"
                 />
+                 <div className=" hidden md:flex lg:hidden  flex-col w-full items-center mt-[10px] text-[20px] underline font-semibold ">
+              Related
+              <div className="flex  w-full mx-auto justify-evenly mt-[10px] items-center">
+                {relatedProducts.slice(0, 3).map((item) => (
+                  <RelatedProducts
+                    key={item.id}
+                    id={item.id}
+                    image={item.image}
+                  />
+                ))}
               </div>
-              <div className="flex flex-col w-[35vw] ml-auto mt-[5px] ">
+            </div>
+              </div>
+              <div className="md:ml-[15px] flex flex-col w-[35vw] lg:ml-auto mt-[5px] ">
                 <h1 className="text-[35px] font-semibold"> {product.title} </h1>
                 <h3 className="text-[25px] text-[#7e7e7e]">{product.model}</h3>
                 <div className="flex items-center my-[15px]">

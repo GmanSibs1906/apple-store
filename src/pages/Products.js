@@ -49,7 +49,7 @@ function Products() {
     <div className=" w-full h-full bg-[#f1f1f1] flex relative ">
       <LeftSideBar />
 
-      <div className=" md:mx-[100px] flex flex-col w-full md:max-w-[70%] min-h-[94vh]  ">
+      <div className=" md:mx-[70px] lg:mx-[100px] flex flex-col w-full md:max-w-[70%] min-h-[94vh]  ">
         <div className="flex w-full items-center justify-center h-[100px] p-[10px] mb-[30px]">
           <div className="flex flex-col justify-start p-[8px] w-[380px]">
             <h1 className="flex w-full justify-center text-[30px] font-extralight mt-[50px] ">
