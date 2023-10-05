@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { newOrder } from "../../redux/features/orders/orderSlice";
 import { handlePayfastSession } from "../../handlePayment/handlePayfastSession";
 
-function OrderSummary({
+function CellOrderSummary({
   discount,
   courier,
   enablePayBtn,
@@ -73,9 +73,9 @@ function OrderSummary({
   };
 
   return (
-    <div className="hidden fixed right-[100px] lg:flex w-[22vw] h-[80vh] mt-[70px] px-[20px] flex-col items-center">
+    <div className="flex lg:hidden w-full h-[80vh] mt-[70px] flex-col items-center">
       {/* Order summary */}
-      <div className="flex bg-white w-[250px] rounded-[10px] flex-col px-[15px] py-[20px]">
+      <div className="flex bg-white w-full rounded-[10px] flex-col px-[15px] py-[20px]">
         <div className="font-semibold text-[18px]"> Order Summary</div>
         <div className="flex flex-col text-[14px] font-light text-[#454545] my-[10px] h-[130px] justify-evenly ">
           <div className="flex w-full justify-between">
@@ -154,4 +154,4 @@ function OrderSummary({
   );
 }
 
-export default OrderSummary;
+export default CellOrderSummary;

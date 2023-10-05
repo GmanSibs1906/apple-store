@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 function MobileMenu({ onClose }) {
   return (
-    <div className=" md:hidden fixed inset-0 flex items-center justify-center z-50 mt-[50px]">
+    <div className=" md:hidden fixed inset-0 flex items-center justify-center z-50 mt-[47px]">
       {/* <div className="fixed inset-0 bg-gray-700 opacity-70"></div> */}
-      <div className="relative pl-[30px] font-bold z-10 inset-0 bg-[#454545] opacity-95 p-4 min-h-[94vh] w-full flex flex-col text-[35px] text-white">
+      <div className="relative pl-[30px] font-semibold z-10 inset-0 bg-[#454545] opacity-95 p-4 min-h-[94vh] w-full flex flex-col text-[30px] text-white">
         {/* Your content here */}
         <Link to="/" onClick={onClose}>
           <span className="  ">

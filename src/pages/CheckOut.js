@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef  } from "react";
 import OrderSummary from "../componants/checkout/OrderSummary";
 import BagProductPreview from "../componants/products/BagProductPreview";
 import { useSelector } from "react-redux";
 import { aramex, courier, pep } from "../assets/images";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import CellOrderSummary from "../componants/checkout/CellOrderSummary";
 
 function CheckOut() {
+
+  // use-ref for the target section
+  const targetSectionRef = useRef(null);
+
+  //  handle button click and scroll to the target section
+  const scrollToSection = () => {
+    if (targetSectionRef.current) {
+      targetSectionRef.current.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
   const { cartItems, quantity } = useSelector((store) => store.cart);
 
   const [fullName, setFullName] = useState("");
@@ -59,7 +72,7 @@ function CheckOut() {
   if (quantity < 1) {
     return (
       <section className="w-full min-h-[92vh] bg-[#f1f1f1] flex relative">
-        <div className=" ml-[100px] flex w-[80%] flex-col justify-center items-center">
+        <div className=" w-full md:ml-[100px] flex md:w-[80%] flex-col justify-center items-center">
           <div className="flex text-[#454545] justify-center w-full text-[60px] font-extrabold ">
             Your Cart
           </div>
@@ -93,16 +106,16 @@ function CheckOut() {
   return (
     <div className=" w-full min-h-[92vh] bg-[#f1f1f1] flex relative ">
       {/* center with search and products */}
-      <div className=" mx-[50px] mt-[50px] flex flex-col w-[65%] pt-[23px] pl-[10%]   ">
+      <div className=" md:mx-[50px] mt-[50px] pl-[5%] pr-[5%] md:pr-[0px] flex flex-col lg:w-[65%] md:pt-[23px] md:pl-[10%]   ">
         {/*Shipping details */}
-        <div className="flex flex-col bg-white w-[85%] p-[20px] rounded-[10px] ">
+        <div className="flex flex-col bg-white lg:w-[85%] p-[20px] rounded-[10px] ">
           <div className="text-[20px]">SHIPPING DETAILS</div>
           <div action="" className="mt-[10px] relative">
             <span className="text-red-600">*</span>
             <input
               type="text"
               placeholder="Full Name..."
-              className=" w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
+              className=" w-[75vw] md:w-[60vw] lg:w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
               onChange={(e) => {
                 setFullName(e.target.value);
               }}
@@ -113,7 +126,7 @@ function CheckOut() {
               type="text"
               required
               placeholder="Contact number..."
-              className=" w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
+              className=" w-[75vw] md:w-[60vw] lg:w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
               onChange={(e) => {
                 setContactNumber(e.target.value);
               }}
@@ -124,7 +137,7 @@ function CheckOut() {
               type="text"
               required
               placeholder="Street address..."
-              className=" w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
+              className=" w-[75vw] md:w-[60vw] lg:w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
               onChange={(e) => {
                 setAddress(e.target.value);
               }}
@@ -135,7 +148,7 @@ function CheckOut() {
               type="text"
               required
               placeholder="City..."
-              className=" w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
+              className=" w-[75vw] md:w-[60vw] lg:w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
               onChange={(e) => {
                 setCity(e.target.value);
               }}
@@ -146,7 +159,7 @@ function CheckOut() {
               type="text"
               placeholder="Country..."
               required
-              className=" w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
+              className=" w-[75vw] md:w-[60vw] lg:w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300"
               onChange={(e) => {
                 setCountry(e.target.value);
               }}
@@ -206,27 +219,30 @@ function CheckOut() {
             <input
               type="text"
               placeholder="Discount voucher..."
-              className=" ml-[7px] w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300 mt-[10px]"
+              className=" ml-[7px] w-[75vw] md:w-[60vw] lg:w-[30vw] my-[6px] rounded-md h-[35px] pl-[10px] border border-slate-300 mt-[10px]"
               onChange={(e) => {
                 setVoucher(e.target.value);
               }}
             />
-            <p className=" ml-[9px] mt-[-5px] text-[12px] text-green-600">
+            <p className=" ml-[9px] mt-[-5px] mb-[50px] lg:mb-[0px] text-[12px] text-green-600">
               Enter "<span className="font-bold text-black">rockstar</span>" for
               10% discount
             </p>
+            <Link to="#pay" onClick={scrollToSection}>
             <button
               onClick={() => {
                 handleClick();
               }}
-              className=" text-[12px] absolute right-0 bottom-0 mb-[6px] rounded-[5px] w-[120px] h-[25px] border border-[#d7d7d7] cursor-pointer bg-clip-text text-green-600 font-semibold "
+              className=" text-[12px] absolute right-0 bottom-0 mt-[90px] lg:mt-[0px] md:mb-[6px] rounded-[5px] w-[120px] h-[25px] border border-[#d7d7d7] cursor-pointer bg-clip-text text-green-600 font-semibold "
             >
               Confirm
             </button>
+            </Link>
+           
           </div>
         </div>
         {/* Cart review */}
-        <div className=" flex flex-col bg-white w-[85%] p-[20px] rounded-[10px] mt-[20px]">
+        <div className=" flex flex-col bg-white lg:w-[85%] p-[20px] rounded-[10px] mt-[20px]">
           <div className=" text-[20px] "> ITEMS IN YOUR BAG </div>
           <div className="flex flex-wrap justify-center">
             {cartItems.map((item) => {
@@ -234,6 +250,23 @@ function CheckOut() {
             })}
           </div>
         </div>
+
+        {/* Cellphone Order summary */}
+        <div className="w-full lg:hidden" ref={targetSectionRef}>
+        <CellOrderSummary
+        courier={courierComp}
+        discount={discount}
+        enablePayBtn={enablePayBtn}
+        contactNumber={contactNumber}
+        address={address}
+        city={city}
+        country={country}
+        courierComp={courierComp}
+        fullName={fullName}
+        orderId={orderId}
+      />
+        </div>
+       
       </div>
 
       {/* right side with cart products */}
