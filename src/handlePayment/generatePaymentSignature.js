@@ -4,6 +4,7 @@ const crypto = require("crypto-js");
 export function generatePreHash(process) {
   let preHash = '';
   let count = 0;
+  console.log(count)
   for (let [key, value] of Object.entries(process)) {
   if (key !== 'signature') {
   preHash += key + '=' + encodeURIComponent(value);
